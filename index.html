@@ -2,106 +2,213 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101015">
-<title>Aditya.exe — Birthday Mission 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101a32">
+<title>Adya.exe 🦊 Birthday Mission</title>
 <style>
-:root{--bg:#0b0b10;--card:#171720;--red:#ff496c;--pink:#ffb6c8;--muted:#b8b8c8;--gold:#ffd166;--line:#373341}
+:root{--bg:#101a32;--orange:#f28c28;--blue:#58b8e8;--cream:#f8f0e2;--card:#192541;--muted:#c2cce0}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#351522 0,#14121b 42%,#08080c 100%);color:#f8f7fb;font-family:system-ui,-apple-system,Segoe UI,sans-serif;display:flex;justify-content:center;padding:20px 13px}
-main{width:100%;max-width:620px}
-header{text-align:center;margin:18px 0 22px}
-.tag{display:inline-block;border:1px solid #713043;color:var(--pink);border-radius:999px;padding:7px 12px;font-size:11px;letter-spacing:1.4px}
-h1{font-size:clamp(32px,9vw,49px);line-height:1.02;margin:17px 0 10px;letter-spacing:-1.5px}
-h1 span{color:var(--red)}
-.sub{color:var(--muted);line-height:1.6}
-.progress{display:flex;gap:7px;margin:17px 0}
-.dot{height:5px;border-radius:9px;background:#373541;flex:1;transition:background .2s}.dot.done{background:var(--red)}
-.card{background:rgba(23,23,32,.96);border:1px solid #34313f;border-radius:22px;padding:22px;box-shadow:0 20px 60px #0006;margin:14px 0}
-.kicker{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:850}
-h2{margin:10px 0;font-size:25px}
-p{line-height:1.65;color:#dedde7}
+body{margin:0;background:radial-gradient(circle at top,#263c60,#101a32 60%,#080d19);color:var(--cream);font-family:system-ui,sans-serif;min-height:100vh;padding:20px 14px}
+main{max-width:650px;margin:auto}
+header{text-align:center;padding:25px 0}
+.tag{border:1px solid #526887;border-radius:30px;padding:7px 13px;font-size:11px;letter-spacing:2px}
+h1{font-size:clamp(34px,9vw,54px);line-height:1.1;margin:20px 0 10px}
+h1 span{color:var(--orange)}
+.sub,p{line-height:1.7;color:var(--muted)}
+.card{background:#192541ed;border:1px solid #354767;border-radius:23px;padding:22px;margin:16px 0;box-shadow:0 15px 45px #0004;animation:appear .45s ease}
+h2{margin:9px 0 12px;font-size:25px}
+.kicker{font-size:11px;letter-spacing:2px;color:var(--blue);font-weight:850}
 button,input{font:inherit}
-button{border:0;border-radius:13px;background:linear-gradient(135deg,var(--red),#ff7e9d);color:#210711;font-weight:850;padding:13px 16px;cursor:pointer;width:100%;margin-top:10px}
-button.secondary{background:#292936;color:#f6eaf0;border:1px solid #464151}
-input{width:100%;padding:13px;border-radius:12px;border:1px solid #484252;background:#0d0d14;color:white;margin:8px 0}
-.hidden{display:none!important}.small{font-size:12px;color:var(--muted)}.feedback{min-height:24px;color:var(--gold);font-weight:700;margin-top:10px;line-height:1.5}
-.letter{white-space:pre-line;background:#201720;border-left:3px solid var(--red);padding:16px;border-radius:10px;color:#fff0f4;line-height:1.8}
-.badge{display:inline-block;background:#33202a;color:#ffc0d0;padding:5px 9px;border-radius:8px;font-size:12px;font-weight:800}
-footer{text-align:center;color:#777585;font-size:12px;padding:20px 4px}
+button{width:100%;padding:13px 15px;margin-top:10px;border:0;border-radius:13px;background:var(--orange);color:#201407;font-weight:800;cursor:pointer}
+button.secondary{background:#253653;color:var(--cream);border:1px solid #50617e}
+button.yes{background:var(--blue);color:#071725}
+input{width:100%;padding:13px;border:1px solid #50617e;background:#0e172b;color:white;border-radius:12px;margin:9px 0}
+.hidden{display:none!important}
+.feedback{min-height:25px;color:#ffd166;font-weight:700;margin-top:10px;line-height:1.5}
+.small{font-size:12px;color:var(--muted)}
+.letter{white-space:pre-line;line-height:1.9;background:#101a32;padding:17px;border-left:3px solid var(--orange);border-radius:10px}
+.emoji{font-size:65px;text-align:center;margin:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.placeholder{min-height:125px;border:1px dashed #7285a5;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;background:#101a32;color:var(--muted)}
+.timeline{border-left:2px solid var(--orange);padding-left:17px;margin:18px 0}
+.event{margin:17px 0}
+footer{text-align:center;font-size:12px;color:#aab6cd;padding:25px 0}
+#confetti{font-size:30px;text-align:center;animation:bounce 1s infinite alternate}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{to{transform:translateY(-8px) rotate(4deg)}}
+@media(max-width:400px){.card{padding:17px}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
 <header>
-<div class="tag">⚠️ CLASSIFIED • BIRTHDAY MISSION</div>
-<h1>ADITYA<span>.EXE</span> 🎂</h1>
-<div class="sub">One birthday. Three tasks.<br>Zero chance of escaping the cringe. 💀</div>
+<div class="tag">🐰 JUDY & NICK • CLASSIFIED MISSION</div>
+<h1>ADYA<span>.EXE</span> 🎂</h1>
+<p class="sub">One birthday boy. One dramatic bunny.<br>One fox who has absolutely no escape. 🦊</p>
 </header>
-<div class="progress"><div class="dot done" id="d0"></div><div class="dot" id="d1"></div><div class="dot" id="d2"></div><div class="dot" id="d3"></div></div>
 
-<section class="card" id="s0">
-<div class="kicker">LEVEL 01 / ACCESS REQUEST</div>
-<h2>Oi Aditya, YOU'VE BEEN SELECTED. 🚨</h2>
-<p>Congratulations, bro. You have been selected for a top-secret birthday mission. You did not apply. You cannot resign. HR is a potato.</p>
-<p>To continue, confirm your identity:</p>
-<input id="agent" maxlength="35" placeholder="Type your name…">
-<button onclick="start()">ACCEPT MISSION →</button>
-<div class="feedback" id="f0"></div>
+<section class="card" id="opening">
+<div class="emoji">🐰 🦊</div>
+<div class="kicker">INCOMING TOP-SECRET MISSION</div>
+<h2>Oi Adya, ready for your birthday surprise? 🚨</h2>
+<p>Agent Judy has prepared something for Agent Nick. Warning: excessive cringe, friendship drama and emotional damage from wholesome content may occur. 😭</p>
+<p><b>Do you want to open your surprise?</b></p>
+<div class="grid">
+<button class="yes" onclick="unlock()">YES, LET'S GO 💙</button>
+<button class="secondary" onclick="nope()">NOPE 💀</button>
+</div>
+<div class="feedback" id="noText"></div>
 </section>
 
-<section class="card hidden" id="s1">
-<div class="kicker">LEVEL 02 / BRAIN.EXE</div>
-<h2>First test: use that one brain cell 🧠</h2>
-<p>I get bigger the more you take away from me. What am I?</p>
-<input id="answer" placeholder="Your extremely intelligent answer">
-<button onclick="puzzle()">LOCK IN ANSWER 🔐</button>
-<div class="feedback" id="f1"></div>
-<p class="small">Hint: it's a hole. This mission has a very low budget.</p>
+<section class="card hidden" id="password">
+<div class="kicker">AGENT VERIFICATION 🔐</div>
+<h2>Hold on, Mr. Wilde!</h2>
+<p>Only the birthday boy can enter. Type the secret birthday password.</p>
+<input id="pass" type="password" placeholder="Enter password">
+<button onclick="checkPass()">UNLOCK THE MISSION 🔓</button>
+<div class="feedback" id="passText"></div>
+<p class="small">Demo password: BIRTHDAY. You can change it in the code later. This is a fun gate, not secure privacy protection.</p>
 </section>
 
-<section class="card hidden" id="s2">
-<div class="kicker">LEVEL 03 / FRIENDSHIP AUDIT</div>
-<h2>Choose wisely, Aditya. 🤝</h2>
-<p>What is a close friend legally required to do?</p>
-<button class="secondary" onclick="wrong()">A) Reply within 0.5 seconds, 24/7</button>
-<button class="secondary" onclick="wrong()">B) Never roast you, ever</button>
-<button onclick="right()">C) Roast you for free and still have your back</button>
-<div class="feedback" id="f2"></div>
+<section class="card hidden" id="memories">
+<div class="kicker">MISSION 01 • OUR LITTLE ZOOTOPIA</div>
+<h2>Meet the chaos duo 🐰🦊</h2>
+<p>Me: Judy Hopps energy. You: Nick Wilde behaviour. Together? Absolute nonsense. 🤝</p>
+<div class="grid">
+<div class="placeholder">🐰<br>Judy's photo goes here</div>
+<div class="placeholder">🦊<br>Nick's photo goes here</div>
+<div class="placeholder">📸<br>Our photo #1</div>
+<div class="placeholder">📸<br>Our photo #2</div>
+</div>
+<p class="small">Photo placeholders for now. Add your pictures after the website works.</p>
 </section>
 
-<section class="card hidden" id="s3">
-<div class="kicker">MISSION COMPLETE / SECRET UNLOCKED</div>
-<div class="badge">🏆 CERTIFIED LEGEND: ADITYA</div>
-<h2>Okay, jokes aside… 💌</h2>
-<p>You passed the mission. Your prize is something much better than my questionable game design: a real birthday message.</p>
-<div class="letter" id="letter">Happy Birthday, Aditya! 🎂🖤
-
-Okay, jokes aside — I'm genuinely glad to have you as a friend. Thank you for the laughs, the random conversations, and all the little moments that make our friendship special.
-
-I hope this year brings you happiness, good health, peace of mind, and lots of reasons to be proud of yourself. May your plans work out, your worries feel lighter, and your life be full of good people and unforgettable memories.
-
-Keep being your own chaotic self (but please update your common sense software once in a while 😭).
-
-Whatever life gets busy with, I hope we keep laughing at random things and making memories we’ll look back on someday.
-
-Have the happiest birthday, Aditya. You deserve a really good year ahead. 🫶
-
-— Your friend 💌</div>
-<button onclick="copyLetter()">COPY YOUR BIRTHDAY LETTER 💌</button>
-<button class="secondary" onclick="replay()">REPLAY THE NONSENSE ↻</button>
-<div class="feedback" id="f3"></div>
+<section class="card hidden" id="videos">
+<div class="kicker">MISSION 02 • MEMORY REPLAY</div>
+<h2>Evidence of our stupidity 🎬</h2>
+<div class="placeholder">🎥<br>Our funny video / reel goes here</div>
+<p class="small">Video placeholder. You can add a video file later.</p>
 </section>
-<footer>Built with friendship, chaos & approximately one brain cell. 🖤</footer>
+
+<section class="card hidden" id="timeline">
+<div class="kicker">MISSION 03 • FRIENDSHIP FILE</div>
+<h2>Some certified Adya moments 🧡</h2>
+<div class="timeline">
+<div class="event"><b>📍 The beginning</b><p>Two people who somehow ended up in the same story.</p></div>
+<div class="event"><b>😂 The chaos era</b><p>Random conversations, teasing and memories that make no sense to anyone else.</p></div>
+<div class="event"><b>🫶 The real part</b><p>Behind all the jokes, there's a friendship I genuinely appreciate.</p></div>
+</div>
+<p>Official nickname collection: <b>Adya • Adi • Golu</b> 😭💙</p>
+</section>
+
+<section class="card hidden" id="music">
+<div class="kicker">BONUS LEVEL • VIBES ONLY</div>
+<h2>Birthday soundtrack 🎶</h2>
+<p>Tap below for a simple, generated instrumental melody. No music file needed!</p>
+<button onclick="toggleMusic()" id="musicButton">▶ PLAY INSTRUMENTAL</button>
+<p class="small">Browser audio starts only after you tap. This is a simple original synthesized tune.</p>
+</section>
+
+<section class="card hidden" id="letterCard">
+<div class="kicker">CONFIDENTIAL • FROM JUDY TO NICK 💌</div>
+<h2>Okay Golu, jokes aside…</h2>
+<div class="letter">Happy Birthday, Adya! 🎂🧡
+
+First of all, congratulations on surviving another year of being YOU. Truly a historic achievement. 😭
+
+But honestly, I'm really glad we became friends. Thank you for the laughs, the random talks, the teasing and all those little moments that make a friendship feel special.
+
+Adi, I hope this new year of your life brings you happiness, good health, peace of mind and lots of reasons to smile. I hope you keep growing, achieving your goals and discovering good things about yourself.
+
+You deserve people who support you, memories that make you laugh even years later, and days that remind you life can be beautiful too.
+
+No matter how much I roast you, remember that I'm wishing the best for you. And please, Golu, update your common-sense software sometimes. 😭🦊
+
+Happy Birthday once again! Stay happy, keep being your chaotic self, and may this year be a really good one for you.
+
+— Your Judy 🐰💙
+</div>
+</section>
+
+<section class="card hidden" id="final">
+<div id="confetti">🎉 🎂 🎉</div>
+<div class="kicker">CASE CLOSED • MISSION COMPLETE</div>
+<h2>HAPPY BIRTHDAY, ADYA! 🦊</h2>
+<p>Officially certified: 100% fox behaviour, 100% roastable, and one genuinely appreciated friend.</p>
+<p>Here's to more laughs, more memories and many more chapters in our friendship. 💙🧡</p>
+<button onclick="replay()">REPLAY THE NONSENSE ↻</button>
+</section>
+
+<footer>Made with friendship, chaos & one dramatic bunny. 🐰🦊</footer>
 </main>
 <script>
-function show(n){for(let i=0;i<4;i++){document.getElementById('s'+i).classList.toggle('hidden',i!==n);document.getElementById('d'+i).classList.toggle('done',i<=n)}window.scrollTo({top:0,behavior:'smooth'})}
-function start(){let v=document.getElementById('agent').value.trim().toLowerCase();if(!v){document.getElementById('f0').textContent='Identity required. We cannot trust a random potato.';return}if(!v.includes('aditya')){document.getElementById('f0').textContent='Hmm… this mission is addressed to Aditya. Try his name 😭';return}show(1)}
-function puzzle(){let a=document.getElementById('answer').value.trim().toLowerCase();if(['hole','a hole','pit','a pit'].includes(a)){document.getElementById('f1').textContent='Correct. Brain.exe has successfully launched. 🔓';setTimeout(()=>show(2),700)}else{document.getElementById('f1').textContent='ACCESS DENIED 💀 Try again. Hint: HOLE.'}}
-function wrong(){document.getElementById('f2').textContent='Incorrect. Friendship committee is disappointed. Please reconsider your life choices. 😭'}
-function right(){document.getElementById('f2').textContent='Correct. Friendship audit passed. Heartfelt content loading…';setTimeout(()=>show(3),900)}
-function copyLetter(){let t=document.getElementById('letter').innerText;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>document.getElementById('f3').textContent='Copied! Now go be wholesome. 💗').catch(()=>document.getElementById('f3').textContent='Long-press the letter and copy it manually.')}else{document.getElementById('f3').textContent='Long-press the letter and copy it manually.'}}
-function replay(){['agent','answer'].forEach(x=>document.getElementById(x).value='');['f0','f1','f2','f3'].forEach(x=>document.getElementById(x).textContent='');show(0)}
+let noCount=0, audioCtx=null, melodyTimer=null, noteIndex=0;
+const notes=[261.63,329.63,392,329.63,293.66,349.23,440,392];
+function nope(){
+ noCount++;
+ const messages=[
+ "EXCUSE ME?? Judy has filed a complaint. 😭",
+ "Adya, button galat dabaya. Try using those two brain cells. 💀",
+ "GOLU. I am THIS close to calling the ZPD. 🐰",
+ "Adi, even Nick Wilde would have clicked YES by now. 🦊",
+ "FINAL WARNING: Judy's patience has left the chat. 😂"
+ ];
+ document.getElementById('noText').textContent=messages[Math.min(noCount-1,messages.length-1)];
+}
+function unlock(){
+ document.getElementById('opening').classList.add('hidden');
+ document.getElementById('password').classList.remove('hidden');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function checkPass(){
+ const p=document.getElementById('pass').value.trim().toLowerCase();
+ if(p!=='birthday'){
+  document.getElementById('passText').textContent="Wrong password, Agent Nick. Try again. 🦊";
+  return;
+ }
+ document.getElementById('password').classList.add('hidden');
+ ['memories','videos','timeline','music','letterCard','final'].forEach(id=>document.getElementById(id).classList.remove('hidden'));
+ document.getElementById('passText').textContent='';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleMusic(){
+ if(melodyTimer){
+  clearInterval(melodyTimer);melodyTimer=null;
+  document.getElementById('musicButton').textContent='▶ PLAY INSTRUMENTAL';
+  if(audioCtx)audioCtx.suspend();
+  return;
+ }
+ const AC=window.AudioContext||window.webkitAudioContext;
+ if(!AC){alert('Audio is not supported in this browser.');return}
+ if(!audioCtx)audioCtx=new AC();
+ audioCtx.resume();
+ document.getElementById('musicButton').textContent='⏸ PAUSE INSTRUMENTAL';
+ playNote();
+ melodyTimer=setInterval(playNote,380);
+}
+function playNote(){
+ if(!audioCtx)return;
+ const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+ osc.type='sine';osc.frequency.value=notes[noteIndex%notes.length];
+ gain.gain.setValueAtTime(0.0001,audioCtx.currentTime);
+ gain.gain.exponentialRampToValueAtTime(0.07,audioCtx.currentTime+0.04);
+ gain.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+0.32);
+ osc.connect(gain);gain.connect(audioCtx.destination);
+ osc.start();osc.stop(audioCtx.currentTime+0.34);noteIndex++;
+}
+function replay(){
+ if(melodyTimer){clearInterval(melodyTimer);melodyTimer=null}
+ if(audioCtx)audioCtx.suspend();
+ document.getElementById('musicButton').textContent='▶ PLAY INSTRUMENTAL';
+ noCount=0;noteIndex=0;
+ document.getElementById('noText').textContent='';
+ document.getElementById('pass').value='';
+ document.getElementById('passText').textContent='';
+ ['password','memories','videos','timeline','music','letterCard','final'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+ document.getElementById('opening').classList.remove('hidden');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
 </script>
 </body>
-</html>
+  </html>
+
