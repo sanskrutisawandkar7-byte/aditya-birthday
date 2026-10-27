@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101015">
+<title>Aditya.exe — Birthday Mission 🎂</title>
+<style>
+:root{--bg:#0b0b10;--card:#171720;--red:#ff496c;--pink:#ffb6c8;--muted:#b8b8c8;--gold:#ffd166;--line:#373341}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#351522 0,#14121b 42%,#08080c 100%);color:#f8f7fb;font-family:system-ui,-apple-system,Segoe UI,sans-serif;display:flex;justify-content:center;padding:20px 13px}
+main{width:100%;max-width:620px}
+header{text-align:center;margin:18px 0 22px}
+.tag{display:inline-block;border:1px solid #713043;color:var(--pink);border-radius:999px;padding:7px 12px;font-size:11px;letter-spacing:1.4px}
+h1{font-size:clamp(32px,9vw,49px);line-height:1.02;margin:17px 0 10px;letter-spacing:-1.5px}
+h1 span{color:var(--red)}
+.sub{color:var(--muted);line-height:1.6}
+.progress{display:flex;gap:7px;margin:17px 0}
+.dot{height:5px;border-radius:9px;background:#373541;flex:1;transition:background .2s}.dot.done{background:var(--red)}
+.card{background:rgba(23,23,32,.96);border:1px solid #34313f;border-radius:22px;padding:22px;box-shadow:0 20px 60px #0006;margin:14px 0}
+.kicker{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:850}
+h2{margin:10px 0;font-size:25px}
+p{line-height:1.65;color:#dedde7}
+button,input{font:inherit}
+button{border:0;border-radius:13px;background:linear-gradient(135deg,var(--red),#ff7e9d);color:#210711;font-weight:850;padding:13px 16px;cursor:pointer;width:100%;margin-top:10px}
+button.secondary{background:#292936;color:#f6eaf0;border:1px solid #464151}
+input{width:100%;padding:13px;border-radius:12px;border:1px solid #484252;background:#0d0d14;color:white;margin:8px 0}
+.hidden{display:none!important}.small{font-size:12px;color:var(--muted)}.feedback{min-height:24px;color:var(--gold);font-weight:700;margin-top:10px;line-height:1.5}
+.letter{white-space:pre-line;background:#201720;border-left:3px solid var(--red);padding:16px;border-radius:10px;color:#fff0f4;line-height:1.8}
+.badge{display:inline-block;background:#33202a;color:#ffc0d0;padding:5px 9px;border-radius:8px;font-size:12px;font-weight:800}
+footer{text-align:center;color:#777585;font-size:12px;padding:20px 4px}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="tag">⚠️ CLASSIFIED • BIRTHDAY MISSION</div>
+<h1>ADITYA<span>.EXE</span> 🎂</h1>
+<div class="sub">One birthday. Three tasks.<br>Zero chance of escaping the cringe. 💀</div>
+</header>
+<div class="progress"><div class="dot done" id="d0"></div><div class="dot" id="d1"></div><div class="dot" id="d2"></div><div class="dot" id="d3"></div></div>
+
+<section class="card" id="s0">
+<div class="kicker">LEVEL 01 / ACCESS REQUEST</div>
+<h2>Oi Aditya, YOU'VE BEEN SELECTED. 🚨</h2>
+<p>Congratulations, bro. You have been selected for a top-secret birthday mission. You did not apply. You cannot resign. HR is a potato.</p>
+<p>To continue, confirm your identity:</p>
+<input id="agent" maxlength="35" placeholder="Type your name…">
+<button onclick="start()">ACCEPT MISSION →</button>
+<div class="feedback" id="f0"></div>
+</section>
+
+<section class="card hidden" id="s1">
+<div class="kicker">LEVEL 02 / BRAIN.EXE</div>
+<h2>First test: use that one brain cell 🧠</h2>
+<p>I get bigger the more you take away from me. What am I?</p>
+<input id="answer" placeholder="Your extremely intelligent answer">
+<button onclick="puzzle()">LOCK IN ANSWER 🔐</button>
+<div class="feedback" id="f1"></div>
+<p class="small">Hint: it's a hole. This mission has a very low budget.</p>
+</section>
+
+<section class="card hidden" id="s2">
+<div class="kicker">LEVEL 03 / FRIENDSHIP AUDIT</div>
+<h2>Choose wisely, Aditya. 🤝</h2>
+<p>What is a close friend legally required to do?</p>
+<button class="secondary" onclick="wrong()">A) Reply within 0.5 seconds, 24/7</button>
+<button class="secondary" onclick="wrong()">B) Never roast you, ever</button>
+<button onclick="right()">C) Roast you for free and still have your back</button>
+<div class="feedback" id="f2"></div>
+</section>
+
+<section class="card hidden" id="s3">
+<div class="kicker">MISSION COMPLETE / SECRET UNLOCKED</div>
+<div class="badge">🏆 CERTIFIED LEGEND: ADITYA</div>
+<h2>Okay, jokes aside… 💌</h2>
+<p>You passed the mission. Your prize is something much better than my questionable game design: a real birthday message.</p>
+<div class="letter" id="letter">Happy Birthday, Aditya! 🎂🖤
+
+Okay, jokes aside — I'm genuinely glad to have you as a friend. Thank you for the laughs, the random conversations, and all the little moments that make our friendship special.
+
+I hope this year brings you happiness, good health, peace of mind, and lots of reasons to be proud of yourself. May your plans work out, your worries feel lighter, and your life be full of good people and unforgettable memories.
+
+Keep being your own chaotic self (but please update your common sense software once in a while 😭).
+
+Whatever life gets busy with, I hope we keep laughing at random things and making memories we’ll look back on someday.
+
+Have the happiest birthday, Aditya. You deserve a really good year ahead. 🫶
+
+— Your friend 💌</div>
+<button onclick="copyLetter()">COPY YOUR BIRTHDAY LETTER 💌</button>
+<button class="secondary" onclick="replay()">REPLAY THE NONSENSE ↻</button>
+<div class="feedback" id="f3"></div>
+</section>
+<footer>Built with friendship, chaos & approximately one brain cell. 🖤</footer>
+</main>
+<script>
+function show(n){for(let i=0;i<4;i++){document.getElementById('s'+i).classList.toggle('hidden',i!==n);document.getElementById('d'+i).classList.toggle('done',i<=n)}window.scrollTo({top:0,behavior:'smooth'})}
+function start(){let v=document.getElementById('agent').value.trim().toLowerCase();if(!v){document.getElementById('f0').textContent='Identity required. We cannot trust a random potato.';return}if(!v.includes('aditya')){document.getElementById('f0').textContent='Hmm… this mission is addressed to Aditya. Try his name 😭';return}show(1)}
+function puzzle(){let a=document.getElementById('answer').value.trim().toLowerCase();if(['hole','a hole','pit','a pit'].includes(a)){document.getElementById('f1').textContent='Correct. Brain.exe has successfully launched. 🔓';setTimeout(()=>show(2),700)}else{document.getElementById('f1').textContent='ACCESS DENIED 💀 Try again. Hint: HOLE.'}}
+function wrong(){document.getElementById('f2').textContent='Incorrect. Friendship committee is disappointed. Please reconsider your life choices. 😭'}
+function right(){document.getElementById('f2').textContent='Correct. Friendship audit passed. Heartfelt content loading…';setTimeout(()=>show(3),900)}
+function copyLetter(){let t=document.getElementById('letter').innerText;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>document.getElementById('f3').textContent='Copied! Now go be wholesome. 💗').catch(()=>document.getElementById('f3').textContent='Long-press the letter and copy it manually.')}else{document.getElementById('f3').textContent='Long-press the letter and copy it manually.'}}
+function replay(){['agent','answer'].forEach(x=>document.getElementById(x).value='');['f0','f1','f2','f3'].forEach(x=>document.getElementById(x).textContent='');show(0)}
+</script>
+</body>
+</html>
